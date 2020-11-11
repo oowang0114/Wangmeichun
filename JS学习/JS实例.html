@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  1，2：  <p>点击下面的按钮来显示今天是周几：</p>
+    <button onclick="f1()">check</button>
+    <p id="demo1"></p>
+f3：
+    <p>点击循环代码五次</p>
+    <button onclick="f3()">点击</button>
+    <p id="demo3"></p>
+f4():
+    <p>点击下方按钮，for/in循环，遍历对象person的属性</p>
+    <button onclick="f4()">点击此处</button>
+    <p id="demo4"></p>
+    测试5：<br>
+    typeof操作符输出测试
+    <p id="demo5"></p>
+    测试5_5：<br>
+    constructor属性返回所有JavaScript变量的构造函数
+    <p id="demo5_5"></p>
+    测试6：<br>
+    null与undefined区别
+    <p id="demo6"></p>
+f7():
+         <p>点击下方按钮，测试continue，中断循环中的迭代，如果出现指定条件，然后继续循环中的下一个迭代！！！区别于break，break用于跳出循环</p>
+        <button onclick="f7()">点击此处</button>
+        <p id="demo7"></p>
+f8():
+        <p>typeof操作符返回或表达式的类型</p>
+        <button onclick="f8()">点击查看</button>
+        <p id="demo8"></p>
+f9():正则表达式
+        <p>搜索子字符串"runoob",并显示匹配的其实位置：</p>
+        <button onclick="f9()">点击此处</button>
+        <p id="demo9"></p>
+
+f10():
+        <p>
+            正则表达式中replace()替换:<br>
+            替换"microsoft"为"Runoob"
+        </p>
+        <button onclick="f10()">点击此处</button>
+        <p id="demo10">Visit Microsoft</p>
+test() 方法，如果字符串中含有匹配的文本，则返回 true，否则返回 false。
+        <p>以下实例用于搜索字符串中的字符 "e"：</p>
+        <p id="demo11">The best things in life are free</p>
+exec()方法，用于检测字符串中的正则表达式的匹配。该函数返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为null。
+        <p id="demo12">The best things in life are free</p>
+
+    <script>
+            function f1(){
+                var x;
+                var d = new Date().getDay();
+                switch(d){
+                    case 0 : x = "星期日";
+                    break;
+                    case 1 : x = "星期一";
+                    break;
+                    case 2 : x = "星期er";
+                    break;
+                    case 3 : x = "星期s";
+                    break;
+                    case 4 : x = "星期si";
+                    break;
+                    case 5: x = "星期wu";
+                    break;
+                    case 6: x = "星期liu";
+                    break;
+                }
+                document.getElementById("demo1").innerHTML = x;
+            }
+            // ==========================================================================
+            function f2(){
+                var x;
+                var d = new Date().getDay();
+                switch(d){
+                    case 6:x = "今天是星期六";
+                    break;
+                    case 0:x = "今天是周日";
+                    break;
+                    default:
+                    x = "期待周末";
+                }
+                document.getElementById("demo").innerHTML=x;
+            }
+        //   ===================================================================
+    // 循环解构
+    /*     cars = ["BWM","Volvo","Saab","Ford"];
+        for(var i = 0;i<cars.length;i++){
+            document.write(cars[i]+"<br>");
+        } */
+
+        function f3(){
+            var x="";
+            for(var i = 0;i < 5; i++){
+                x = x +"该数字为" + i +"<br>";
+            }
+            document.getElementById("demo3").innerHTML = x;
+
+        }
+        
+        function f4(){
+            // for/in函数遍历对象的属性
+            var x;
+            var txt ="";
+            var person = {fname:"Bill",lname:"Gates",age:33};
+            for(x in person){
+                txt = txt + person[x];
+            }
+            document.getElementById("demo4").innerHTML = txt;
+        }
+
+
+        function f7(){
+            var x = "",i = 0;
+            while(i<5){
+                x = x + "该数字为" + i +"<br>";
+                i++;
+            }
+            document.getElementById("demo7").innerHTML = x;
+        }
+
+
+
+        document.getElementById("demo5").innerHTML = 
+        typeof "Hello" +"<br>"+     //string
+        typeof 3.14+"<br>"+         //number
+        typeof false+"<br>"+        //boolean
+        typeof [1,2,3]+"<br>"+      //object
+        typeof{name:'Jhon',age:34}; //object
+        
+        //测试null和undefined的区别
+        document.getElementById("demo6").innerHTML = typeof undefined +"<br>"+           //undefined
+        typeof null +"<br>"+        // object
+        (null === undefined) + "<br>" +     //flase,类型不同
+        (null == undefined);            //true，值相等
+
+        //constructor属性返回所有JavaScript变量的构造函数
+        document.getElementById("demo5_5").innerHTML= 
+        "John".constructor + "<br>" +       //function String() { [native code] }
+        (3.14).constructor+ "<br>" +    //function Number() { [native code] }
+        false.constructor+ "<br>" +     //function Boolean() { [native code] }
+        [1,2,34].constructor+ "<br>" +  //function Array() { [native code] }
+        {name:'Jhon',age:33}.constructor+ "<br>" +  //function Object() { [native code] }
+        new Date().constructor+ "<br>" +    //function Date() { [native code] }
+        function(){}.constructor;   //function Function() { [native code] }
+
+
+            function f8(){
+                var y = "5";    //字符串
+                var x = + y;
+                document.getElementById("demo8").innerHTML = typeof y + "<br>" +typeof x;
+            }
+        
+        function f9(){
+            var str = "Visit Runoob!";
+            var n = str.search(/Runoob/i);
+            document.getElementById("demo9").innerHTML = n;
+        }
+
+        function f10(){
+            var str = document.getElementById("demo10").innerHTML;
+            var txt = str.replace(/microsoft/i,"Runoob");
+            document.getElementById("demo10").innerHTML = txt;
+        }
+// test()方法
+        var patt1 = new RegExp("e");
+        var t = patt1.test("The best things in life are free");
+        document.getElementById("demo11").innerHTML = t;
+
+// exec()
+        var patt = new RegExp("e");
+        var x = patt.exec("The best things in life are free");
+        document.getElementById("demo12").innerHTML = x;
+        
+
+    </script>
+</body>
+</html>

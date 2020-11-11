@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.基于VAR创建一个叫n的变量，让其具体的值是10
+        var n = 10;    
+        // 创建一个叫m的变量，但此时没有让其指向任何的值
+        var m ;
+        // 在控制台输出n m变量所代表的值
+        console.log(n,m)    //=>10 undefined
+
+        //2.基于ES6中的LET创建一个变量，让其指向100；但后期让其重新指向了200；   
+        let a = 100;
+        a = 200;    
+        console.log(a); //=>200
+
+        // 3.基于es6中的const创建一个变量，让其指向1000，从此b就不能在指向其它的值了，
+        // 一旦修改指向，就会报错；所以基于const定义的变量一般也被称为常量
+        // const b = 1000;
+        // b = 2000;
+        // console.log(b); //出现错误，const常量，赋值后，如果再次赋值会出错、
+
+        // 4.创建一个函数：也可以理解为创建一个变量func,让其指向这个函数
+        function func(){
+
+        }
+        console.log(func);
+
+        // 5.创建一个类：也可以理解为创建一个变量Parent，让其指向这个类
+        class Parent{
+
+        }
+        console.log(Parent);
+
+        // 6.基于模块规范来导入具体的某个模块：定义一个叫做axios的变量，用来指向导入的这个模块
+        // import axios from './axios';
+        // let axios = require('./axious');
+
+        // js中的注释: ctrl+/ 单行注释； shift+alt+A 批量注释（块注释）
+
+    </script>
+
+    <script>
+        // 注意：变量名区分大小写！
+/*         let Test = 100;
+        console.log(Test); */
+        
+        // 驼峰命名法：第一个单词首字母小写，其他大写
+
+/*         let studentInformation{
+            name:'罗文姬女士'
+        };
+
+        let studentInfo = {}; */
+
+        //基于$开头：一般代表使用JQ或者骑他使用$的类库获取的内容
+        let $box = $('.box');
+        // 基于_开头：一般代表是全局或者公共的变量
+        let _box = {};
+        // 基于数字区分相似名称的变量
+        let box1 = 10;
+        let box2 = 20;
+        // 想要分割单词，有_隔开，或者用驼峰单词
+
+    </script>
+</body>
+</html>

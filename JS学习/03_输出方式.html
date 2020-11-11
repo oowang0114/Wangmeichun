@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>输出方式</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            border: 1px solid lightcoral;
+            background-color: lightcyan;
+                       
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+    <script>
+
+        // 想要操作哪个元素，就先获取哪个元素：我们可以根据元素的ID获取这个元素对象document.getElementById
+       
+    //把内容写入到页面中，和alert一样，写入的内容最后都会转换为字符串 
+  /*       document.write('aa');
+        document.write(10);
+        document.write({name:'我'}); */
+        let box = document.getElementById('box');
+        box.innerHTML('哈哈哈');
+        // box.innerText('文本');
+    </script>
+
+
+</body>
+</html>
