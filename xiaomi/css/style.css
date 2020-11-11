@@ -1,0 +1,371 @@
+/* 公共样式 */
+body{
+    font-size: 12px;
+    background-color: #fff;
+}
+.contianer{
+   width: 1206px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* 顶部代码 */
+.page-top{
+    height: 40px;
+    background-color: #323232;
+    z-index:100;
+    color: #a2a2a2;
+    line-height: 40px;
+    width: 100%;
+    position: relative;
+}
+.page-top .top-lt{
+    float: left;
+    
+}
+.page-top .top-gt{
+    float: right;
+    padding-right: 10%;
+}
+
+.page-top .top-lt a{
+    display: inline-block;
+}
+
+.page-top span{
+    color: #3f3f3f;
+    padding: 0px 3px;
+}
+
+.page-top .top-lt a:link,a:visited{color:#b0b0b0;text-decoration:none;}
+a:hover{color:#fff;}
+.page-top .top-lt .download{
+    position: relative;
+}
+
+
+.page-top .top-lt .down-box{
+    width: 126px;
+    position: absolute;
+    left: -44px;
+    top: 3px;
+    padding-top: 20px;
+    box-shadow: reb(170,170,170) 0px 1px 5px;
+    display: none;
+}
+.page-top .top-lt a.download:hover .down-box{
+    display: block;
+}
+/* .page-top .userinfo{
+    float: right;
+} */
+.page-top .userinfo .user{
+    width: 120px;
+
+    display: inline-block;
+    position: relative;
+}
+.page-top .userinfo .user .tit{
+    line-height: 40px;
+    text-align: center;
+    display: block;
+}
+.page-top .userinfo .user ul{
+    position: absolute;
+    left: 0;
+    top: 30px;
+    width: 120px;
+    padding: 10px 0px;
+    box-shadow: reb(170,170,170) 0px 3px 5px;
+    display: none;
+}
+
+.page-top .userinfo .user li{
+    line-height: 30px;
+    text-align: center;
+    background-color:#fff;
+}
+
+
+
+.page-top .userinfo .user li a:hover{    
+    color: #ff6700;
+    display: block;
+}
+
+.page-top .userinfo .user:hover{
+    background-color: #fff;
+}
+.page-top .userinfo .user:hover .tit{
+    color: #ff6700;
+}
+.page-top .userinfo .user:hover ul{
+    display: block;
+}
+
+
+.nav{
+    width: 1226px;
+    height: 100px;
+    background-color: #fff;
+    margin-left: 276px;
+    z-index: 50;
+    
+    position: relative;
+    
+}
+.nav .nav-top{
+    float: left;
+    width: 800px;
+    background-color: #fff;
+}
+.search{
+    float: right;
+    width: 340px;
+    height: 70px;
+    line-height: 100px;
+    z-index: 800
+    
+}
+.search form{
+    width: 100%;
+    line-height: 100px;
+}
+.search form input:nth-child(1){
+    width: 210px;
+    height: 50px;
+    font-size: 16px;
+    text-indent: 60px;
+    border-color: darkgray;
+    float: left;
+    margin-top: 27px;
+}
+.search form input:nth-child(2){
+    width: 80px;
+    height: 54px;
+    margin-top: 27px;
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+
+.nav .nav-top ul{
+    display: block;
+    padding-left: 100px;
+    width: 850px;
+    height: 100px;
+}
+.nav .nav-top ul li{
+    float: left;
+    font-size: 16px;
+    display: block;
+    padding-left: 20px;
+    line-height: 100px;
+    
+}
+.nav-top li a:hover{    
+    color: #ff6700;
+    display: block;
+}
+.nav-top li a{
+    color: black;
+}
+
+
+
+.nav-lt{
+    margin-left:148px;
+    height: 460px;
+    width: 241px;
+    background-color: rgba(0,0,0,0.6);
+    
+    padding-left: 0px;
+    float: left;
+}
+.nav-top img{
+    width: 60px;
+    height: 60px;
+    margin: 20px ;
+    margin-left:-127px;
+    float: left;
+}
+.nav-lt ul li{ 
+    color: #fff;
+    padding-top: 4px; 
+    width: 241px;
+    line-height: 42px;
+    text-align: center;
+    font-size: 16px;
+    display: block;    
+}
+.nav-lt ul li a:hover{
+    
+    background-color: #ff6700;
+    display: block;
+}
+.swipwe-button-prev:hover,.swipwe-button-next:hover{
+    background-color: rgba(164, 167, 164, 0.233);
+    display: block;
+}
+.swipwe-button-prev{
+    display: block;
+    float: left;
+    margin-top: 180px;
+    height: 100px;
+    width: 60px;
+    z-index: 1000;
+    position: absolute;
+}
+.swipwe-button-next{
+    display: block;
+    margin-top: 180px;
+    margin-left: 1040px;
+    height: 100px;
+    width: 60px;
+    z-index: 1000;
+    position: absolute;
+}
+
+.jg{
+    height: 20px;
+    width: 100%;
+    background-color: #fff;
+    padding-top: 16px;
+}
+table{
+    margin-top: 30px;
+    border: 1px solid;
+    width: 240px;
+    height: 187px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    background-color: #5F5750;
+    
+}
+table img{
+    width: 30px;
+}
+.ad{
+    padding-left: 386px;
+    width: 1126px;
+    
+}
+.ad img{
+    width: 350px;
+    margin: 10px;
+    
+}
+
+#banner {
+    width: 743px;
+    height: 440px;
+    background: aqua;
+    margin: 0px auto;
+    /*面板使用相对定位，方便在其上面使用绝对定位添加元素*/
+    position: relative;
+    
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#banner ul li img {
+    width: 1100px;
+    height: 460px;
+}
+
+#banner .item {
+    position: absolute;
+    top: 0;
+    display: none;
+    opacity: 0;
+    animation-timing-function: ease-in-out;
+}
+/*初始加载时，显示第一张图片*/
+#banner .item:first-child {
+    display:block;
+    opacity: 1;
+}
+
+.arrow #leftArrow, .arrow #rightArrow {
+    width: 40px;
+    height: 69px;
+    position: absolute;
+    top: 195px;
+}
+
+.arrow #leftArrow {
+    left: 100px;
+    background-image: url("../images/xiaomi/icon-slides.png");
+    background-position: -83px 0;
+    background-repeat: no-repeat;
+}
+
+.arrow #rightArrow {
+    right: 100px;
+    background-image: url("../images/xiaomi/icon-slides.png");
+    background-position: -126px 0;
+    background-repeat: no-repeat;
+}
+/*右下角小圆点切换*/
+.zeroPoint {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+}
+
+.zeroPoint li {
+    width: 5px;
+    height: 5px;
+    border: 2px solid #555;
+    background: #555;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.zeroPoint li:hover {
+    background: #fff;
+}
+
+.zeroPoint li.hover {
+    background: #fff;
+}
+
+/*定义图片切换动画样式*/
+/*淡出*/
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@-webkit-keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+/*淡入*/
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

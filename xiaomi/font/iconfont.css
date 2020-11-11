@@ -1,0 +1,25 @@
+@font-face {font-family: "iconfont";  /*规定一个新的字体类型*/
+  src: url('iconfont.eot?t=1603182109480'); /* IE9 */
+  src: url('iconfont.eot?t=1603182109480#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPYAAsAAAAAB/wAAAOMAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqDYIMuATYCJAMMCwgABCAFhG0HOxv5Bsgeg217KfCULaeDJp2U/89v6n1AUxKvOTNLOnGrOaSpkUNJ2zmdun2Z2dcGD5+7t+3T0LK2IFSScxJFC8SkNUUCBFT/cbjX2hzYfJblMse2LuoCjAMKbKxJmwMskA/kfxi78iI2AwFMYtVHU7c+Q8DjGL0IQJfHnQ0+pcbV5BIeMZRMDNCNBp+nMJcAzPJ/Tz8axQMMvwJj4ICjax46fGFva7CarmF1EeCMZwTApgEsoD6AA9pKzUnYMFwfy6SIufpUAw5hxvLpOj5blRpW+o/HALUwsi0AoDZUMk6KY9OA4G0NFpTg/K2AoUd0LuAGwgYX8bjOFGQxmgzjE2yWEZaLd6qSfcMWuHVLwYrrTa2HbsZR0cKNRHfuJExdWLnIfPv2UGjzky/eiF11t/uB2zHLryWs36xtmbatcmvxwQJUc/yt5gmWqVsrt9WybtiibXYPYLx7N5EZbt1KsYRDAmYy+c6dYbaDJ2ND1sDG5cel0uCCEPuisJbvb4qL774NTYj7/Wp/FHYKdUmYPPg4P1R7p8388XMvd/fWS9QlLa0LWfSIr9Z0GjmS0i9Z//fwQrcP7Tvgm83wC3TXZu2rS4+HTb/S5m96XFz7Dt++1cKkDu1dm706ZaIFHx0eAyuqlzuaC+XVK6DPyqRRoyjTZLhMpyROGNWFkpIICrpgJuTjAYH7Mp45LhGNvvR3N69ZDG8AjaZL12c+/tuuktv2zBDYICNiJLdDFgDQL7IfmH+g72ZPswP+59/A+cCQTHub37yZAwA83P/G+E59N4d2VoC/WwvB3+O0rOBUnqFhQ2bbbD3GysK/GyZkcht0GPZAT/pLQ1oTAJKGxMDwFwMsXnUkh60PfsyagAGvPZjU0326WRAFi8IIoK4JAIjDLmDYnAKWw2Ukh30MfkJ9BgNHLJgkpKAFzWrmMXVWxGxVzBNyhgmeXLlEsnSqKcgdJLp9RdlKkucTE0Sl1OMTGjrjs7HuYomojDGktMzdSFUlQVLkYqEb2E4sKpIFryIXiLmqM19Vva1cLqnsRs5cuRgmnSlE2VSiPIIcwwg8cslKSG5tlSn3/UFEbj5Fsik1ZRX6BCJFKU/jgoac4lsgu4tLWpVdyzWlyrg1olJJBBKFrJigGzCKisywTOAtb1dAlEvllN8j6NWKC1WT2oqd80uLn28dgIlxApsYYokDf8q+cl9uvmgYJpe4830A') format('woff2'),
+  url('iconfont.woff?t=1603182109480') format('woff'),
+  url('iconfont.ttf?t=1603182109480') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1603182109480#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-gouwuche:before {
+  content: "\e617";
+}
+
+.icon-yonghu:before {
+  content: "\e725";
+}
+
