@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+             
+// 不能重复声明，变量-可以修改，块级作用域,
+// 防止循环变量变成全局变量
+// 不存在变量提升（必须先声明，在使用）
+// 暂时性死区（块级作用域）
+        // var是全局变量，能重复声明；let是块级作用域，不能重复声明
+
+        // for循环计数器很适合用let
+         for(var i = 0; i < 10;i++){
+            setTimeout(function(){
+                console.log(i);
+            })
+        } 
+
+         if(true){
+            let b;
+            console.log(b);
+            if(true){
+                let c = 30;
+            }
+            console.log(c);
+        }
+        console.log(b); 
+        //let定义的 b是局部变量，外部无法访问
+
+        // 防止循环变量变成全局变量
+     
+        for(let j = 0; j < 10;j++){
+            setTimeout(function(){
+                console.log(j);
+            })
+        } 
+    </script>
+</body>
+</html>

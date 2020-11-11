@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //es6提供了新的数据结构Set。它类似于数组，但是成员的值都是唯一的，没有重复的值
+        const s1 = new Set();
+        console.log(s1.size);
+
+        const s2 = new Set(["a","b"]);
+        console.log(s2.size);
+
+        const s3 = new Set(["a","a","b","b"]);
+        console.log(s3.size);
+        //过滤掉重复的值，只输出2
+
+        const ary = [...s3];//数组去重
+        console.log(ary);
+
+        /*
+     +add(value):添加某个值，返回set结构本身
+    +delete(value):删除某个值，返回一个布尔值，表示删除是否成功
+    +has(value):返回一个布尔值，表示该值是否为Set成员
+    +clear()：清除所有成员，没有返回值 */
+
+    const s4 = new Set();
+    //向set结构中添加值，使用add方法
+    s4.add('a').add('b');
+    console.log(s4.size);
+
+    
+    const r1 = s4.delete('a');
+    console.log(r1);
+
+    const r2 = s4.has('a');
+    console.log(r2);
+    const r3 = s4.has('b');
+    console.log(r3);
+
+    s4.clear();
+    console.log(s4.size);
+
+    //遍历set数据结构，从中取值
+    const s5 = new Set(["o","p","q"]);
+    s5.forEach(value => {
+        console.log(value);
+    })
+            /* forEach()方法用于调用数组的每个元素，并将元素传递给回调函数 */
+    </script>
+</body>
+</html>

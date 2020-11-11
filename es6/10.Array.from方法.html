@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//Array.from()
+//一：将类数组或可遍历对象转换为真正的数组
+        var arrayLike ={
+            "0":"zhangsan",
+            "1":"lisi",
+            "2":"wangwu",
+            "length":3
+        }
+        //此时arrayLike是一个伪数组
+        
+       var ary = Array.from(arrayLike);
+       console.log(ary);
+
+//二：此方法还可以接受第二个参数，作用类似于数组的map方法，用来对每个元素进行处理，将处理后的值放入返回的数组。
+
+
+
+// map()方法返回一个新数组，数组中的元素为原始数组元素调用函数处理后的值。
+// map()方法按照原始数组元素进行处理元素。
+// 注意：1.map()不对空数组进行检测  2.map()不会改变原始数组
+        var arrayLike ={
+            "0" : "1",
+            "1" : "2",
+            "length" : 2
+        }
+
+        var ary = Array.from(arrayLike,item => item * 2);
+        console.log(ary);
+    
+    </script>
+</body>
+</html>

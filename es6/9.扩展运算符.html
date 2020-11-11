@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扩展运算符</title>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <script>
+        //扩展运算符可以将数组拆分成以逗号分隔的参数序列
+        let ary = ["a","b","c"];
+        // ...ary;    //"a","b","c"
+        console.log(...ary);
+        console.log("a","b","c"); 
+       
+
+        // 扩展运算符应用于数组合并
+        let ary1 = [1,2,3];
+        let ary2 = [4,5,6];
+         
+        let ary3 = [...ary1,...ary2];
+        console.log(ary3);
+
+        // 合并数组的第二种方法
+        let ary1 = [1,2,3];
+        let ary2 = [4,5,6];
+
+        ary1.push(...ary2);
+        console.log(ary1);
+
+        //push()方法可向数组的末尾添加一个或多个元素，并返回新的长度
+        // 注意：新元素将添加在数组的末尾，此方法改变数组的长度
+        // 提示：在数组起始位置添加元素，使用unshift()方法
+
+         // 利用扩展运算符将伪数组转换为真正的数组
+        
+        var oDivs = document.getElementsByTagName('div');
+        console.log(oDivs); //此时输出的时伪数组
+        var ary = [...oDivs];
+        console.log(ary);   //此时输出的时真实的数组
+        ary.push('a');  //只有真正的数组，才能使用数组的一些方法
+        console.log(ary);
+
+        
+    </script>
+</body>
+</html>

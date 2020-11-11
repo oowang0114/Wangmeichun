@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>const常量</title>
+</head>
+<body>
+    <script>
+    
+// 不能重复声明，常量-不能修改，块级作用域
+// 具有块级作用域
+// 声明常量时必须赋值
+        // const:具有块级作用域
+        if (true) {
+            const a = 10;
+            if (true) {
+                const a = 20;
+                console.log(a);
+            }
+            console.log(a);
+        }
+        console.log(a);
+        // 20,10,undefined
+    
+        // const声明常量时必须赋值
+        const PI = 3.14;//正常
+        const PI;     //报错
+
+    // 常量-不能修改....内存地址不能修改
+        const PI = 3.14;
+        PI = 3.14; 
+        // Assignment to constant variable.
+         const ary = [100,200];
+        ary[0] = 'a';
+        ary[1] = 'b';
+        console.log(ary);   //['a'.'b']
+        ary = ['a','b'];    //Assignment to constant variable.
+        
+    </script>
+</body>
+</html>

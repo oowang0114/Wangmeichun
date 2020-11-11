@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数</title>
+</head>
+<body>
+    <script>
+        //箭头函数是用来简化函数定义语法的
+        const fn = () => {
+            console.log(123);
+        }
+        fn();
+    /*   (形参) ={
+            函数体
+        } */
+
+        //在箭头函数中，如果函数体中只有一句代码  并且代码的执行结果就是函数的返回值  函数体大括号可以省略
+        const sum = (n1,n2) => n1 + n2;
+        const result = sum(10,20);
+
+        console.log(result);
+
+        // 在箭头函数中 如果形参只有一个，形参外侧的小括号也是可以省略的
+        const fn = v =>{
+            alert(v);
+        }
+        fn(20);
+
+        // 箭头函数不绑定this  箭头函数没有自己的this关键字  如果在箭头函数中使用this，this关键字将指向箭头函数定义位置中的this
+        function fn(){
+            console.log(this);
+            return () =>{
+                console.log(this);
+            }
+        }
+        
+        const obj ={name:'zhangsan'};
+
+        const resFn = fn.call(obj);
+
+        resFn();
+        /* JavaScript call() 方法
+        call() 方法是预定义的 JavaScript 方法。
+        它可以用来调用所有者对象作为参数的方法。
+        通过 call()，您能够使用属于另一个对象的方法。
+        本例调用 person 的 fullName 方法，并用于 person1： */
+        var person = {
+        fullName: function() {
+            return this.firstName + " " + this.lastName;
+            }
+        }
+        var person1 = {
+            firstName:"Bill",
+            lastName: "Gates",
+        }
+        var person2 = {
+            firstName:"Steve",
+            lastName: "Jobs",
+        }
+        person.fullName.call(person1);  // 将返回 "Bill Gates"
+
+
+
+
+    </script>
+</body>
+</html>
