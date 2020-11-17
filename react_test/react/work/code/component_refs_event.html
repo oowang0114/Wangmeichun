@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="demo"></div>
+
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+   <script type="text/javascript" src="../js/babel.min.js"></script>
+   <script type="text/javascript" src="../js/prop-types.js"></script>
+
+   <script type="text/babel">
+/* 
+需求：自定义组件，
+1.搜索框，按钮，提示
+2.点击按钮，提示第一个输入框中的值
+3.当第二个输入框失去焦点时，提示这个输入框的值
+*/
+
+// 1.定义组件
+class MyComponent extends React.Component{
+        constructor(props){
+            super(props)
+            
+            this.showInput = this.showInput.bind(this)
+            this.handBlur = this.handBlur.bind(this)
+        }
+//出现自定义的方法，就要写上面的几行代码
+    showInput(){
+        const input = this.refs.content 
+        // alert(input.value)
+         alert(this.input.value)
+    }
+    handBlur(event){
+        alert(event.target.value)
+
+    }
+
+    render(){
+        return(
+            <div>
+                <input type="text" ref = "content"/> &nbsp;&nbsp;
+                <input type="text" ref = {input => this.input = input}/> &nbsp;&nbsp;
+                <button onClick = {this.showInput}>提示输入</button> &nbsp;&nbsp;      
+               <input type = "text" placeholder = "失去焦点提示内容" onBlur ={this.handBlur}></input>
+
+            </div>
+        )
+    }
+}
+// 2.渲染组件标签
+ReactDOM.render(<MyComponent />,document.getElementById('demo'))
+
+
+
+   </script>
+</body>
+</html>

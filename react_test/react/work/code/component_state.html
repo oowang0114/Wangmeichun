@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="demo"></div>
+
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+   <script type="text/javascript" src="../js/babel.min.js"></script>
+
+   <script type="text/babel">
+        /* 
+        需求：自定义组件，功能说明如下：
+            1.显示h2标题，初始文本
+            2.点击标题更新
+        */
+        
+    // 1.定义组件
+    class Trans extends React.Component{
+        constructor(props){
+            super(props)
+            this.state = {
+                isTrans : false
+            }
+            this.handClick = this.handClick.bind(this)
+        }
+        handClick(){
+            const isTrans = !this.state.isTrans
+            this.setState({isTrans})
+        }
+        render(){
+            const {isTrans} = this.state
+            return <h2 onClick = {this.handClick}> {isTrans?'no':'yes'} </h2>
+        }
+
+    }
+
+    // 渲染组件元素
+    ReactDOM.render(<Trans/>,document.getElementById('demo'))
+   </script>
+</body>
+</html>
