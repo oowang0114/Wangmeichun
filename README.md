@@ -1,9 +1,15 @@
 # 基本操作
+
 git init 新建一个空的仓库
+
 git status 查看状态
+
 git branch 查看所有分支
+
 git branch newname 创建一个叫newname的分支
+
 git checkout newname 切换到叫newname的分支上
+
 git add . 添加文件
 git rm -r xxx.txt  删除文件
 git commit -m '注释' 提交添加的文件并备注说明
