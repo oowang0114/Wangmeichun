@@ -1,4 +1,4 @@
-#基本操作
+# 基本操作
 git init 新建一个空的仓库
 git status 查看状态
 git branch 查看所有分支
@@ -18,18 +18,18 @@ git branch -d newname  删除newname分支
 git log 查看变更日志
 git reset --hard 版本号前六位 回归到指定版本
 git pull origin master 将master分支上的内容拉到本地上
-#删除本地文件后重新拉取最新
+# 删除本地文件后重新拉取最新
 git fetch --all   
 git reset --hard origin/master 
 git pull
 或
 git checkout file(文件名)
-#将已提交的文件忽略
+# 将已提交的文件忽略
 git rm -r --cached node_modules
 git add . -A
 git commit -m "remove xxx"
 git push
-#添加新功能时
+# 添加新功能时
 git checkout -b login 创建一个新的login分支并进入此分支
 git status
 git add .
@@ -39,7 +39,7 @@ git checkout master
 git branch
 git merge login
 git push
-#把新分支添加到云端
+# 把新分支添加到云端
 git checkout login
 git branch
 git push -u origin login
