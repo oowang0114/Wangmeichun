@@ -1,71 +1,104 @@
->应用的说明文件
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 1.静态页面
+# 2.初始化数据动态显示：comments[]
+>数据如果多个组件用，就放在父组件中
+    app： 
+        1.给组件指定state属性
+        2.在render()中先取出来
+        3.将comments传递<List />
+    =>list：
+        1.声明接收什么类型的属性
+        2.在render()中先去出来
+    =>item：
+        1.item将list中<li></li>写入组件
+        2.接收comment对象，声明接收什么类型的属性
+        3.在render()中取出来
+        4.改写username，content为动态。
+        {comment.username}和{comment.content}
+    =>list:
+        <ul></ul>标签中，引入item组件，实现动态数据
+        {comment.map((comment,index) => <Item comment = {comment} key = {index}/>)}
+# 3.交互:添加，删除 
+  ## 添加：
+        add：
+            1.绑定事件监听，onClick、onChange 
+                提交onClick={this.handSubmit}
+                handSubmit = () =>{
+                    <!-- 1.收集数据，并封装成comment对象 
+                        受控组件：1.定义state//初始化state
+                            state{
+                                username:'',content:''
+                            }
+                        =>在render中取出来
+                            const {username,content} = this.state,
+                            input中定义value={username} -->
+                    const comment = this.state
+                    <!-- 2.更新状态 =>app中定义addComment()-->
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+                    <!-- 3.清除输入数据 -->
+                    this.setState({
+                        username : '',
+                        content : ''
+                    })
+              
+                }
+            
+                handleNameChange = (event) = >{
+                    const username = event.target.value
+                    this.setState({username})
+                }
+                handleContentChange = (event) =>{
+                    const content = event.target.value
+                    this.setState({content})
+                }
+        =>app:
+            addComment = (comment) =>{
+                const {comments} = this.state
+                comments.unshift(comment)
+                this.setState({comments})
+            }
+            <Add addComment = {addComment}/>
+        =>add:
+            接收方法属性
+            static propTypes = {
+                addComment : PropTypes.func.isRequired
+            }
+            =>handSubmit = () =>{
+                const comment = this.state
+                this.props.addComment(comment)
+                this.setState({
+                    username:'',
+                    content:''
+                })
+            }
+## 删除：
+        app:
+            1.删除评论的方法
+            deleteComment = (index) =>{
+                const {comments} = this.state
+                comments.splice(index,1)
+                this.setState({comments})
+            }
+            render()取出：const{deleteComment} = this.state
+            <List deleteComment = {this.deleteComment}/>
+        =>list:
+            static propTypes = {
+                deleteComment : PropTypes.func.isRequired
+            }
+            render()中取出
+            <ul>标签内，获取deleteComment = {deleteComment},index = {index}
+        =>item:
+            1.接收声明
+                static propTypes = {
+                    deleteComment : PropTypes.func.isRequired,
+                    index : PropTypes.number.isRequired
+                }
+            2.添加事件handleDel
+                handleDel = ()=>{
+                    const {comment,deleteComment,index} = this.props
+                    if(window.confrim(`确定删除&{comment.username}的评论吗？`)){
+                        deleteComment(index)
+                    }
+                }
+            3.判断删除为空：
+                const display = comments.length == 0 ? 'block' : 'none'
