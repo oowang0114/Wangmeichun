@@ -1,6 +1,6 @@
 
-# 1.静态页面
-# 2.初始化数据动态显示：comments[]
+## 1.静态页面
+## 2.初始化数据动态显示：comments[]
 >数据如果多个组件用，就放在父组件中
     app： 
         1.给组件指定state属性
@@ -18,8 +18,8 @@
     =>list:
         <ul></ul>标签中，引入item组件，实现动态数据
         {comment.map((comment,index) => <Item comment = {comment} key = {index}/>)}
-# 3.交互:添加，删除 
-  ## 添加：
+## 3.交互:添加，删除 
+  ### 添加：
         add：
             1.绑定事件监听，onClick、onChange 
                 提交onClick={this.handSubmit}
@@ -71,7 +71,7 @@
                     content:''
                 })
             }
-## 删除：
+### 删除：
         app:
             1.删除评论的方法
             deleteComment = (index) =>{
