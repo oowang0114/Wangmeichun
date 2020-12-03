@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PubSub from 'pubsub-js';
 import CommentAdd from '../comment_add/comment_add';
 import CommentList from '../comment_list/comment_list';
 
@@ -20,6 +20,12 @@ class App extends Component {
       {username:'Tom',content:'React挺好的'},
       {username:'Jack',content:'React太难了'},
     ]
+    }
+    componentDidMount(){
+      // 订阅消息(deleteComment)
+      PubSub.subscribe('deleteComment',(msg,index)=>{
+        this.deleteComment(index) 
+      })
     }
 // 添加评论
     addComment = (comment) =>{

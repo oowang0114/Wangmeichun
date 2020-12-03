@@ -1,7 +1,7 @@
 /*
- * @Author: mikey.zhaopeng 
+ * @Author: 王美纯
  * @Date: 2020-12-03 10:17:09 
- * @Last Modified by:   mikey.zhaopeng 
+ * @Last Modified by:  王美纯
  * @Last Modified time: 2020-12-03 10:17:09 
  */
 import React, { Component } from 'react';
@@ -21,7 +21,7 @@ class CommentItem extends Component {
       const {comment,index} = this.props
       // 提示
       if(window.confirm(`确定删除${comment.username}的评论吗`)){
-        // 确定后删除
+        // 确定后删除(发生事件即需要发布publish消息)
         PubSub.publish('deleteComment',index)
       }
     }
