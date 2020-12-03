@@ -57,7 +57,7 @@ class App extends Component {
                 
                 </div>
               <CommentAdd addComment={this.addComment}/>
-              <CommentList comments = {comments} />
+              <CommentList comments = {comments} deleteComment={this.deleteComment}/>
             </div>
           </div>
         );

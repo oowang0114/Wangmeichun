@@ -1,28 +1,22 @@
-/*
- * @Author: mikey.zhaopeng 
- * @Date: 2020-12-03 10:17:09 
- * @Last Modified by:   mikey.zhaopeng 
- * @Last Modified time: 2020-12-03 10:17:09 
- */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './commentItem.css';
-import PubSub from 'pubsub-js';
+import './commentItem.css'
 
 
 class CommentItem extends Component {
     
     static propTypes = {
         comment : PropTypes.object.isRequired,
+        deleteComment : PropTypes.func.isRequired,
         index : PropTypes.number.isRequired
 
     }
     handdel = ()=>{
-      const {comment,index} = this.props
+      const {comment,deleteComment,index} = this.props
       // 提示
       if(window.confirm(`确定删除${comment.username}的评论吗`)){
         // 确定后删除
-        PubSub.publish('deleteComment',index)
+        deleteComment(index)
       }
     }
       

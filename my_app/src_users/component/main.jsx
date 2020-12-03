@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { Result } from 'antd-mobile';
-import PubSub from 'pubsub-js';
 class Main extends Component {
-
+    static propTypes ={
+        searchName:PropTypes.string.isRequired
+    }
 
     state = { 
         initView: true,
@@ -12,12 +13,10 @@ class Main extends Component {
         users: null,
         errorMsg: null
     }
+    componentWillReceiveProps(newProps){
+    
+        const {searchName} = newProps
 
-    componentDidMount(){
-        // 订阅消息(search)
-        PubSub.subscribe('search',(msg,searchName) =>{
-            //指定了新的searchName，需要请求
-            
         this.setState({
             initView:false,
             loading:true
@@ -42,9 +41,7 @@ class Main extends Component {
             // 更新数据error
             this.setState({loading:false})
         })
-        })
     }
-
     render() {
         const {initView,loading,users,errorMsg} = this.state;
         const {searchName} = this.props;
